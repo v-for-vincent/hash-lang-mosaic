@@ -1,5 +1,7 @@
 ; not actually functional yet
 ; figuring it out as we go along
 #lang brag
-mosaic : line*
-line   : color* (newline | eof)
+mosaic : line (NEWLINE line)*
+line   : (color | space)*
+color  : "r" | "g" | "b"
+space  : " "

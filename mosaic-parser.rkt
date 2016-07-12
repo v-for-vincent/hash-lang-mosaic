@@ -3,6 +3,5 @@
 ; can't require a newline at the end of a line, because last line ends with EOF
 #lang brag
 mosaic : (NEWLINE line)*
-line   : (color | space)+
-color  : "r" | "g" | "b"
-space  : " "
+line   : color+
+color  : "r" | "g" | "b" | " "

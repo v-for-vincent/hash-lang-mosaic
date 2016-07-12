@@ -2,13 +2,8 @@
 ; note the lack of a quote before the first parenthesis
 #lang s-exp "mosaic-expander.rkt"
 (mosaic
-  "\n"
-  (line (color "r") (space " ") (space " ") (space " ") (space " ") (space " ") (color "b"))
-  "\n"
-  (line (color "g") (space " ") (space " ") (space " ") (space " ") (space " ") (color "g"))
-  "\n"
-  (line (space " ") (color "b") (space " ") (space " ") (space " ") (color "r"))
-  "\n"
-  (line (space " ") (space " ") (color "r") (space " ") (color "b"))
-  "\n"
-  (line (space " ") (space " ") (space " ") (color "b")))
+  (line (color "r") (color " ") (color " ") (color " ") (color " ") (color " ") (color "b"))
+  (line (color "g") (color " ") (color " ") (color " ") (color " ") (color " ") (color "g"))
+  (line (color " ") (color "b") (color " ") (color " ") (color " ") (color "r") (color " "))
+  (line (color " ") (color " ") (color "r") (color " ") (color "b") (color " ") (color " "))
+  (line (color " ") (color " ") (color " ") (color "g") (color " ") (color " ") (color " ")))

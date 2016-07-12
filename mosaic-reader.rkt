@@ -7,8 +7,8 @@
     (define get-token
       (lexer
        [(char-set "rgb ") lexeme]
-       [(char-set "\n") (token 'NEWLINE)]
-       [(char-complement (char-set "rgb\n ")) (token 'OTHER)] ; never use these in grammar
+       [(char-set "\n") (token 'NEWLINE "\n")]
+       [(char-complement (char-set "rgb ")) (token 'OTHER)] ; never use these in grammar
        [(eof) eof]))
     (get-token input-port)) ; the next token is simply a token read from this port
   next-token)

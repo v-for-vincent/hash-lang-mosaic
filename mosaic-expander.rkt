@@ -7,7 +7,10 @@
 (provide (rename-out [mosaic-module-begin #%module-begin])
          #%top-interaction)
 
-(define #'(mosaic LINE ...)
+; can I get rid of NEWLINE here?
+; e.g. transform the syntax to a datum, only grab every second element, transform back to syntax
+(define #'(mosaic NEWLINE LINE ...)
+  (define-syntax lines (filter (λ (x) ((syntax->list NEWLINE LINE ...)
   #'(vl-append LINE ...)) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
 (provide mosaic)
 

@@ -4,6 +4,6 @@
 (mosaic
   (line (color "r") (color " ") (color " ") (color " ") (color " ") (color " ") (color "b"))
   (line (color "g") (color " ") (color " ") (color " ") (color " ") (color " ") (color "g"))
-  (line (color " ") (color "b") (color " ") (color " ") (color " ") (color "r") (color " "))
-  (line (color " ") (color " ") (color "r") (color " ") (color "b") (color " ") (color " "))
-  (line (color " ") (color " ") (color " ") (color "g") (color " ") (color " ") (color " ")))
+  (line (color " ") (color "b") (color " ") (color " ") (color " ") (color "r"))
+  (line (color " ") (color " ") (color "r") (color " ") (color "b"))
+  (line (color " ") (color " ") (color " ") (color "g")))

@@ -8,7 +8,7 @@
          #%top-interaction)
 
 (define #'(mosaic LINE ...)
-  #'(vc-append LINE ...)) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
+  #'(vl-append LINE ...)) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
 (provide mosaic)
 
 (define #'(line COLOR ...)

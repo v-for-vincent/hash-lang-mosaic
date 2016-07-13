@@ -1,5 +1,5 @@
 #lang br
-(require pict)
+;(require pict)
 
 (define #'(mosaic-module-begin _PARSE-TREE ...)
   #'(#%module-begin
@@ -11,7 +11,7 @@
 ; e.g. transform the syntax to a datum, only grab every second element, transform back to syntax
 (define-syntax (mosaic stx)
   (define lines (datum->syntax stx (filter (λ (x) (not (equal? "\n" x))) (syntax->datum stx)))) ; THIS IS NOT A PATTERN VARIABLE! need to insert it into syntax.
-  #'(vl-append lines)) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
+  (datum->syntax stx `((require pict) vl-append ,lines))) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
 (provide mosaic)
 
 (define #'(line COLOR ...)

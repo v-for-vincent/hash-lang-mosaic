@@ -9,9 +9,9 @@
 
 ; can I get rid of NEWLINE here?
 ; e.g. transform the syntax to a datum, only grab every second element, transform back to syntax
-(define #'(mosaic NEWLINE LINE ...)
-  (define-syntax lines (filter (λ (x) ((syntax->list NEWLINE LINE ...)
-  #'(vl-append LINE ...)) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
+(define-syntax (mosaic stx)
+  (define lines (datum->syntax stx (filter (λ (x) (not (equal? "\n" x))) (syntax->datum stx)))) ; THIS IS NOT A PATTERN VARIABLE! need to insert it into syntax.
+  #'(vl-append lines)) ; mosaic itself does nothing - when do we need begin? just to be able to parenthesize?
 (provide mosaic)
 
 (define #'(line COLOR ...)
